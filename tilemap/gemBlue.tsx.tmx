@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tileset version="1.2" tiledversion="1.2.0" name="gemBlue" tilewidth="70" tileheight="70" tilecount="1" columns="1">
+ <grid orientation="orthogonal" width="1" height="1"/>
+ <tile id="0">
+  <image width="70" height="70" source="../images/keyYellow.png"/>
+ </tile>
+  <tile id="1">
+  <image width="70" height="70" source="../images/keyRed.png"/>
+ </tile>
+  <tile id="2">
+  <image width="70" height="70" source="../images/keyGreen"/>
+ </tile>
+  <tile id="3">
+  <image width="70" height="70" source="../images/hud_keyGreem_disabled.png"/>
+ </tile>
+   <tile id="4">
+  <image width="70" height="70" source="../images/hud_p1.png"/>
+ </tile>
+   <tile id="5">
+  <image width="70" height="70" source="../images/hud_p2.png"/>
+ </tile>
+   <tile id="6">
+  <image width="70" height="70" source="../images/hud_p3.png"/>
+ </tile>
+   <tile id="7">
+  <image width="70" height="70" source="../images/star.png"/>
+ </tile>
+    <tile id="8">
+  <image width="70" height="70" source="../images/snailWalk1.png"/>
+ </tile>
+     <tile id="9">
+  <image width="70" height="70" source="../images/stoneLeft.png"/>
+ </tile>
+      <tile id="10">
+  <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+      <tile id="11">
+  <image width="70" height="70" source="../images/door_openMid.png"/>
+ </tile>
+       <tile id="12">
+  <image width="70" height="70" source="../images/door_closedTop.png"/>
+ </tile>
+       <tile id="13">
+  <image width="70" height="70" source="../images/door_closedMid.png"/>
+ </tile>
+       <tile id="14">
+  <image width="70" height="70" source="../images/weight.png"/>
+ </tile>
+</tileset>
