@@ -18,5 +18,7 @@ public class GameOver extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 561, 1, false);
         this.setBackground("GAME_OVER.png");
+          PlayAgain playagain = new PlayAgain();
+        addObject(playagain,488,429);
     }
 }

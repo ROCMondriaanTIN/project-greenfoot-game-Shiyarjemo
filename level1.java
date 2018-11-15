@@ -110,7 +110,7 @@ public class level1 extends World {
      Door doorEind = new Door();
      addObject(doorEind,5699,253);
      //=========================//
-        music music = new music();
+        Music music = new Music();
         addObject(music,61,54);
         music.getClass();
 }

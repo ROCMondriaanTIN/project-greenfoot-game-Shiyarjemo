@@ -77,11 +77,11 @@ return under != null;}
 
             
 
-            
+             
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")&&onGround() == true) {
             velocityY = -10;
-            setImage("p1_jump.png");
+           
             velocityY = spring;
             Greenfoot.playSound("jump.mp3");
         }
@@ -90,14 +90,14 @@ return under != null;}
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 2;
-            setImage(" p1_walk03.png");
+            
         }
     
  
         if (Greenfoot.isKeyDown("w")&&onGround() == true) {
             velocityY = -10;
             velocityY = spring;
-           setImage("p1_jump.png");
+          
            
         }
 
@@ -105,7 +105,7 @@ return under != null;}
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 2;
-            setImage("p1_walk03.png");
+            
             
         }
     }

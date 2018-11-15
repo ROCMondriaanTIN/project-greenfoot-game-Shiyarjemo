@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class music extends Mover
+public class Music extends Mover
 {
     
     GreenfootSound sound = new GreenfootSound("music.mp3");
