@@ -21,7 +21,8 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        handleInput();
+        
+         handleInput();
                 applyVelocity();
       
         velocityX *= drag;
@@ -65,6 +66,14 @@ public class Hero extends Mover {
 
 
  
+                          for (Actor Door : getIntersectingObjects(Door.class)) {
+            if (Door != null) {
+                
+                 Greenfoot.setWorld(new level2());
+                 
+                return;
+
+            }}
     }
         
 
@@ -81,7 +90,7 @@ return under != null;}
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")&&onGround() == true) {
             velocityY = -10;
-           
+ 
             velocityY = spring;
             Greenfoot.playSound("jump.mp3");
         }
