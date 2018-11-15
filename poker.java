@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class poker extends Mover
+public class Poker extends Mover
 {
     private int walkRange;
     private int xMin;
@@ -14,7 +14,7 @@ public class poker extends Mover
     private boolean firstAct;
     private int speed;
 
-    public poker() {
+    public Poker() {
         super();
         setImage("pokerMad.png");
         getImage().mirrorHorizontally();

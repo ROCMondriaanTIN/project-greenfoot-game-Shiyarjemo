@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *
  * @author R. Springer
  */
-public class MyWorld extends World {
+public class level1 extends World {
 
     private CollisionEngine ce;
 
@@ -13,7 +13,7 @@ public class MyWorld extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public level1() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("pg.png");
@@ -76,16 +76,42 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
-        slimeWalk1 slimeWalk1 = new slimeWalk1();
-        addObject(slimeWalk1,545,464);
-        slimeWalk1.setLocation(536,474);
-        slimeWalk1 slimeWalk12 = new slimeWalk1();
-        addObject(slimeWalk12,948,405);
-        poker poker = new poker();
+       Slime slime1 = new Slime();
+        addObject(slime1,545,464);
+        
+        
+        slime1.setLocation(536,474);
+        
+        Slime slime2 = new Slime();
+        addObject(slime2,948,405);
+        
+        //==========================//
+        Slime slime3 = new Slime();
+        addObject(slime3,2098,530);
+        //==========================//
+        Star star = new Star();
+        addObject(star,2150,493);
+        Star star1 = new Star();
+        addObject(star1,662,461);
+        //=========================//
+        Poker poker = new Poker();
         addObject(poker,173,287);
-        star star = new star();
-        addObject(star,662,461);
+        Poker poker1 = new Poker();
+        addObject(poker1,2726,233);
+        Poker poker2 = new Poker();
+        addObject(poker2,5699,553);
+        //=========================//
+        keyYellow key = new keyYellow();
+        addObject(key,4999,553);
+        //=========================//
+        Diamant diamant = new Diamant();
+        addObject(diamant,2736,613);
+        //=========================//
+     Door doorEind = new Door();
+     addObject(doorEind,5699,253);
+     //=========================//
         music music = new music();
-        addObject(music,60,56);
-    }
+        addObject(music,61,54);
+        music.getClass();
+}
 }

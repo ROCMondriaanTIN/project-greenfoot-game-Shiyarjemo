@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class star extends Mover
+public class Star extends Mover
 {
     private int walkRange;
     private int xMin;
@@ -14,7 +14,7 @@ public class star extends Mover
     private boolean firstAct;
     private int speed;
 
-    public star() {
+    public Star() {
         super();
         setImage("star.png");
         getImage().mirrorHorizontally();

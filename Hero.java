@@ -10,7 +10,7 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     public int star = 0;
-    int spring = -16;
+    int spring = -18;
     public Hero() {
         super();
         gravity = 9.8;
@@ -22,36 +22,66 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+                applyVelocity();
+      
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        applyVelocity();
 
-        for (Actor poker : getIntersectingObjects(poker.class)) {
-            if (poker != null) {
+                          for (Actor Poker : getIntersectingObjects(Poker.class)) {
+            if (Poker != null) {
                 getWorld().removeObject(this);
-                break;
-            }
-        }
-        
-        
-     for (Actor star : getIntersectingObjects(star.class)) {
-            if (star != null) {
+                 Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+            
+         for (Actor Slime  : getIntersectingObjects(Slime.class)) {
+            if (Slime != null) {
+                Greenfoot.setWorld(new GameOver());
+                getWorld().removeObject(this);
+                
+                return;}}
+                
+ for (Actor Star : getIntersectingObjects(Star.class)) {
+            if (Star != null) {
                 Greenfoot.playSound("colect.mp3");
-                getWorld().removeObject(star);
+                getWorld().removeObject(Star);
                 this.star +=1;
-                break;
-            }
-        }
+                return;
+            }}
+            
+             for (Actor Water : getIntersectingObjects(Water.class)) {
+            if (Water != null) {
+              Greenfoot.setWorld(new GameOver());
+                getWorld().removeObject(this);
+                this.star +=1;
+                return;
+               
+            }}
+        //=========================//
+
+
+ 
     }
+        
+
+    
  boolean onGround(){Actor under = getOneObjectAtOffset(0,getImage().getHeight()/2, Tile.class);
 return under != null;}
+
+        
+
+
+            
+
+            
     public void handleInput() {
         if (Greenfoot.isKeyDown("space")&&onGround() == true) {
             velocityY = -10;
+            setImage("p1_jump.png");
             velocityY = spring;
             Greenfoot.playSound("jump.mp3");
         }
@@ -60,20 +90,23 @@ return under != null;}
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 2;
+            setImage(" p1_walk03.png");
         }
     
  
         if (Greenfoot.isKeyDown("w")&&onGround() == true) {
             velocityY = -10;
             velocityY = spring;
-       
-            
+           setImage("p1_jump.png");
+           
         }
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 2;
+            setImage("p1_walk03.png");
+            
         }
     }
     public int getWidth() {

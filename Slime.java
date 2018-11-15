@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class slimeWalk1 extends Mover
+public class Slime extends Mover
 {
     private int walkRange;
     private int xMin;
@@ -14,7 +14,7 @@ public class slimeWalk1 extends Mover
     private boolean firstAct;
     private int speed;
 
-    public slimeWalk1() {
+    public Slime() {
         super();
         setImage("slimeWalk1.png");
         getImage().mirrorHorizontally();
