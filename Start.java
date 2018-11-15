@@ -12,7 +12,7 @@ public class Start extends Mover
      * Act - do whatever the Start wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-   GreenfootSound sound = new GreenfootSound("kurdish-music.mp3");
+   GreenfootSound sound = new GreenfootSound("mucis-start.mp3");
                   boolean firstTrun = true;
                  
     public void act() 
