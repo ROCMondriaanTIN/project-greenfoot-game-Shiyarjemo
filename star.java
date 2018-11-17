@@ -15,7 +15,7 @@ public class Star extends Mover
     private int speed;
 
     public Star() {
-        super();
+      
         setImage("star.png");
         getImage().mirrorHorizontally();
         walkRange = 140;

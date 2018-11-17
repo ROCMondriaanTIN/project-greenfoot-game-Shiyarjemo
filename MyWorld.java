@@ -15,7 +15,7 @@ public class MyWorld extends World {
      */
     public MyWorld() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1, false);
+        super(800, 600, 1, false);
         this.setBackground("startScreen.jpg");
 
         //startScreen();
@@ -32,6 +32,7 @@ public class MyWorld extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
+
 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -52,7 +53,11 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
-        Start start = new Start();
-        addObject(start,518,403);
+
+        StartPlay startPlay = new StartPlay();
+        addObject(startPlay,414,314);
+        removeObject(startPlay);
+        StartPlay startPlay2 = new StartPlay();
+        addObject(startPlay2,402,305);
     }
 }

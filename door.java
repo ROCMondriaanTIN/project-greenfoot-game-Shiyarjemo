@@ -15,5 +15,6 @@ public class Door extends Mover
     public void act() 
     {
         // Add your action code here.
+         applyVelocity();
     }    
 }

@@ -17,17 +17,22 @@ public class Music extends Mover
         // Add your action code here.
          if(firstTrun){
         firstTrun = false;
-        
+         sound.playLoop();
         }
+        
         if(Greenfoot.mouseClicked(this)){
         if(sound.isPlaying()){
-        sound.pause();
+                sound.pause();
         setImage("play.png");
         
+        
         }
-         else{sound.playLoop();
-            setImage("pause.png");}
-        if(Greenfoot.isKeyDown("1")){sound.setVolume(0);}
+         else{
+               sound.playLoop();
+            setImage("pause.png");
+             
+       }
+       
         
         
         }
