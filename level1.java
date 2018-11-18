@@ -91,13 +91,13 @@ public class Level1 extends World {
         Poker poker = new Poker();
         addObject(poker,5071,553);
         DeurBoven door = new DeurBoven();
-        addObject(door,5677,190);
+        addObject(door,5677,215);
         //=========================//
         Key key = new Key();
         addObject(key,2736,613);
         //=========================//
         Door doorEind = new Door();
-        addObject(doorEind,5677,253);
+        addObject(doorEind,5677,273);
         //=========================//
         Music music = new Music();
         addObject(music,61,54);
@@ -116,5 +116,7 @@ public class Level1 extends World {
         LockYellow lockYellow = new LockYellow();
         addObject(lockYellow,3613,553);
 
+        Hud_Key hud_Key = new Hud_Key();
+        addObject(hud_Key,300,42);
     }
 }

@@ -12,7 +12,7 @@ public int star = 0;
     public double velocityX;
     public double velocityY;
     protected Camera camera;
-
+    public int keyYellow;
     private int worldX;
     private int worldY;
     private boolean firstLocation = true;

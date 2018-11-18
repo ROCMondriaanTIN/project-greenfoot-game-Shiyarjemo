@@ -17,7 +17,7 @@ public class LockYellow extends Hero
         // Add your action code here.
         setImage("lock_yellow.png");
            applyVelocity();
-            if(this.keyYellow==1){ this.setLocation(3612,563);}
+           
         
          
     }    
