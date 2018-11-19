@@ -59,6 +59,7 @@ public class Level2 extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        prepare();
     }
 
     void toevoegen(){
@@ -77,7 +78,7 @@ public class Level2 extends World {
         Star star = new Star();
         addObject(star,2194,432);
 
-        Star star1 = new Star();
+        Star2 star1 = new Star2();
         addObject(star1,4215,493);
 
         BlauweKarakter karakter = new BlauweKarakter();
@@ -105,5 +106,21 @@ public class Level2 extends World {
     @Override
     public void act() {
         ce.update();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Hud_Ster hud_Ster = new Hud_Ster();
+        addObject(hud_Ster,146,56);
+        Hud_Ster2 hud_Ster2 = new Hud_Ster2();
+        addObject(hud_Ster2,188,55);
+        hud_Ster2.setLocation(186,58);
+        hud_Ster2.setLocation(191,58);
+        Hud_Key hud_Key = new Hud_Key();
+        addObject(hud_Key,247,51);
     }
 }

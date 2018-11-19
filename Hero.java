@@ -20,14 +20,14 @@ public class Hero extends Mover {
     }
 
     public void yellowKey(){    
-        Hud_Key hud_Key = new Hud_Key();
+      
 
         for (Actor Key : getIntersectingObjects(Key.class)) {
             if (Key != null) {
                 getWorld().removeObject(Key);
-                this.keyYellow = keyYellow;
-                keyYellow =1;
-
+              
+               
+                Hud_Key.hudKey++;
                 Greenfoot.playSound("colect.mp3");
                 return;
 
@@ -37,10 +37,85 @@ public class Hero extends Mover {
 
                 this.setLocation(5600, 253);
 
-                return;}}}
+                return;}}
+            }
+public void Vijanden(){
+//=============1===========
+for (Actor Poker : getIntersectingObjects(Poker.class)) {
+            if (Poker != null) {
+                
+               getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
+            
+                return;
+
+            }}
+//=============2===========
+
+                    for (Actor Slime : getIntersectingObjects(Slime.class)) {
+            if (Slime != null) {
+                
+               getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
+            
+                return;
+
+            }}
+ //=============3===========  
+ for (Actor Fire : getIntersectingObjects(Fire.class)) {
+            if (Fire != null) {
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+//=============4===========
+        for (Actor FlyVijand : getIntersectingObjects(FlyVijand.class)) {
+            if (FlyVijand != null) {
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+//=============5===========
+        for (Actor Snail : getIntersectingObjects(Snail.class)) {
+            if (Snail != null) {
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+}
+
+public void colection(){
+for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
+            if (Diamant != null) {
+                Greenfoot.setWorld(new LevelChoose());
+                return;
+            }}
+            
+            
+        for (Actor Star : getIntersectingObjects(Star.class)) {
+            if (Star != null) {
+                Greenfoot.playSound("colect.mp3");
+                getWorld().removeObject(Star);
+                Hud_Ster.hudSter+=1;
+                return;
+            }}
+            
+                    for (Actor Star2 : getIntersectingObjects(Star2.class)) {
+            if (Star2 != null) {
+                Greenfoot.playSound("colect.mp3");
+                getWorld().removeObject(Star2);
+                Hud_Ster2.hudSter2 +=1;
+                return;
+            }}
+}
 
     @Override
     public void act() {
+        colection();
+        Vijanden();
         yellowKey();
         handleInput();
         applyVelocity();
@@ -51,46 +126,12 @@ public class Hero extends Mover {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
-            if (Diamant != null) {
-                Greenfoot.setWorld(new LevelChoose());
-                return;
-            }}
-        for (Actor Poker : getIntersectingObjects(Poker.class)) {
-            if (Poker != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                return;
+        
+        
+            
+        
+        
 
-            }}
-        for (Actor Fire : getIntersectingObjects(Fire.class)) {
-            if (Fire != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                return;
-
-            }}
-        for (Actor FlyVijand : getIntersectingObjects(FlyVijand.class)) {
-            if (FlyVijand != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                return;
-
-            }}
-        for (Actor Slime  : getIntersectingObjects(Slime.class)) {
-            if (Slime != null) {
-                Greenfoot.setWorld(new GameOver());
-                getWorld().removeObject(this);
-
-                return;}}
-
-        for (Actor Star : getIntersectingObjects(Star.class)) {
-            if (Star != null) {
-                Greenfoot.playSound("colect.mp3");
-                getWorld().removeObject(Star);
-                this.star +=1;
-                return;
-            }}
 
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
@@ -285,9 +326,9 @@ public class Hero extends Mover {
         }
         //============================    
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -3;
+            velocityX =-3;
         }  if (Greenfoot.isKeyDown("right")) {
-            velocityX = 3;
+            velocityX =3;
 
         }
     }

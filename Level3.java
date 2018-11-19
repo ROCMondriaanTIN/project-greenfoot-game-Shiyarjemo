@@ -113,7 +113,7 @@ toevoegen();
   Star star = new Star();
         addObject(star,2508,432);
 
-        Star star1 = new Star();
+        Star2 star1 = new Star2();
         addObject(star1,4964,433);
  //====================
  Poker poker = new Poker();
@@ -123,7 +123,14 @@ toevoegen();
  addObject(poker3,4841,433);
    Poker poker4 = new Poker();
  addObject(poker4,5547,313);
- 
+          Hud_Ster hud_Ster = new Hud_Ster();
+        addObject(hud_Ster,146,56);
+        Hud_Ster2 hud_Ster2 = new Hud_Ster2();
+        addObject(hud_Ster2,188,55);
+        hud_Ster2.setLocation(186,58);
+        hud_Ster2.setLocation(191,58);
+        Hud_Key hud_Key = new Hud_Key();
+        addObject(hud_Key,247,51);
          DoorLevel2 deur = new DoorLevel2();
         addObject(deur,5694,333);
         DeurBoven deurBoven = new DeurBoven();
@@ -131,6 +138,7 @@ toevoegen();
         }
     @Override
     public void act() {
+
         ce.update();
     }
 }

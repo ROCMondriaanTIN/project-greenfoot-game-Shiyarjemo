@@ -11,7 +11,7 @@ public class PlayAgain extends Mover
         // Add your action code here.
 
         sound.playLoop();
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this)||Greenfoot.isKeyDown("space")){
 
             Greenfoot.setWorld(new Level1());
             sound.pause();

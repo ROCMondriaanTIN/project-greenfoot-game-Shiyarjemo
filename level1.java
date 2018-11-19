@@ -81,7 +81,7 @@ public class Level1 extends World {
         //==========================//
         Star star = new Star();
         addObject(star,4390,553);
-        Star star1 = new Star();
+        Star2 star1 = new Star2();
         addObject(star1,662,461);
 
         Diamant Diamant = new Diamant();
@@ -116,7 +116,14 @@ public class Level1 extends World {
         LockYellow lockYellow = new LockYellow();
         addObject(lockYellow,3613,553);
 
+
+ Hud_Ster hud_Ster = new Hud_Ster();
+        addObject(hud_Ster,146,56);
+        Hud_Ster2 hud_Ster2 = new Hud_Ster2();
+        addObject(hud_Ster2,188,55);
+        hud_Ster2.setLocation(186,58);
+        hud_Ster2.setLocation(191,58);
         Hud_Key hud_Key = new Hud_Key();
-        addObject(hud_Key,300,42);
+        addObject(hud_Key,247,51);
     }
 }
