@@ -6,10 +6,11 @@ public class Hero extends Mover {
     private  double acc;
     private  double drag;
 
-    int spring = -18;
+    int spring = -15;
     int karakter = 0;
     int loop = 0;
     int duck = 0;
+    int snelheidBlauwKarakter=0;
 
     public Hero() {
         super();
@@ -19,104 +20,8 @@ public class Hero extends Mover {
         setImage("p1.png");
     }
 
-    public void yellowKey(){    
-      
-
-        for (Actor Key : getIntersectingObjects(Key.class)) {
-            if (Key != null) {
-                getWorld().removeObject(Key);
-              
-               
-                Hud_Key.hudKey++;
-                Greenfoot.playSound("colect.mp3");
-                return;
-
-            }}
-        for (Actor LockYellow  : getIntersectingObjects(LockYellow.class)) {
-            if (LockYellow != null&&keyYellow==1) {
-
-                this.setLocation(5600, 253);
-
-                return;}}
-            }
-public void Vijanden(){
-//=============1===========
-for (Actor Poker : getIntersectingObjects(Poker.class)) {
-            if (Poker != null) {
-                
-               getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-            
-                return;
-
-            }}
-//=============2===========
-
-                    for (Actor Slime : getIntersectingObjects(Slime.class)) {
-            if (Slime != null) {
-                
-               getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-            
-                return;
-
-            }}
- //=============3===========  
- for (Actor Fire : getIntersectingObjects(Fire.class)) {
-            if (Fire != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                return;
-
-            }}
-//=============4===========
-        for (Actor FlyVijand : getIntersectingObjects(FlyVijand.class)) {
-            if (FlyVijand != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                return;
-
-            }}
-//=============5===========
-        for (Actor Snail : getIntersectingObjects(Snail.class)) {
-            if (Snail != null) {
-                getWorld().removeObject(this);
-                Greenfoot.setWorld(new GameOver());
-                return;
-
-            }}
-}
-
-public void colection(){
-for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
-            if (Diamant != null) {
-                Greenfoot.setWorld(new LevelChoose());
-                return;
-            }}
-            
-            
-        for (Actor Star : getIntersectingObjects(Star.class)) {
-            if (Star != null) {
-                Greenfoot.playSound("colect.mp3");
-                getWorld().removeObject(Star);
-                Hud_Ster.hudSter+=1;
-                return;
-            }}
-            
-                    for (Actor Star2 : getIntersectingObjects(Star2.class)) {
-            if (Star2 != null) {
-                Greenfoot.playSound("colect.mp3");
-                getWorld().removeObject(Star2);
-                Hud_Ster2.hudSter2 +=1;
-                return;
-            }}
-}
-
     @Override
     public void act() {
-        colection();
-        Vijanden();
-        yellowKey();
         handleInput();
         applyVelocity();
         rozeKarakter();
@@ -126,31 +31,174 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        
-        
-            
-        
-        
 
+        //=============1===========
+        for (Actor Poker : getIntersectingObjects(Poker.class)) {
+            if (Poker != null) {
+           Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
 
+                return;
+
+            }}
+        //=============2===========
+
+        for (Actor Slime : getIntersectingObjects(Slime.class)) {
+            if (Slime != null) {
+           Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new GameOver());
+
+                return;
+
+            }}
+        //=============3===========  
+        for (Actor Fire : getIntersectingObjects(Fire.class)) {
+            if (Fire != null) {
+                getWorld().removeObject(this);
+            Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
+                Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+        //=============4===========
+        for (Actor FlyVijand : getIntersectingObjects(FlyVijand.class)) {
+            if (FlyVijand != null) {
+                getWorld().removeObject(this);
+              Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
+                Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+        //=============5===========
+        for (Actor Snail : getIntersectingObjects(Snail.class)) {
+            if (Snail != null) {
+                getWorld().removeObject(this);
+                Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
+                Greenfoot.setWorld(new GameOver());
+                return;
+
+            }}
+
+        for (Actor Key : getIntersectingObjects(Key.class)) {
+            if (Key != null) {
+                getWorld().removeObject(Key);
+
+                Hud_Key.hudKey++;
+                Greenfoot.playSound("colect.mp3");
+                return;
+
+            }}
+        for (Actor LockYellow  : getIntersectingObjects(LockYellow.class)) {
+            if (LockYellow != null&&keyYellow==1) {
+                this.setLocation(5600, 253);
+                return;}}
+
+        for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
+            if (Diamant != null) {
+                DiamantHud.diamantHud =1;
+                getWorld().removeObject(Diamant);
+                return;
+            }}
+
+        for (Actor Star : getIntersectingObjects(Star.class)) {
+            if (Star != null) {
+                Greenfoot.playSound("colect.mp3");
+                getWorld().removeObject(Star);
+                Hud_Ster.hudSter=1;
+                return;
+            }}
+
+        for (Actor Star2 : getIntersectingObjects(Star2.class)) {
+            if (Star2 != null) {
+                Greenfoot.playSound("colect.mp3");
+                getWorld().removeObject(Star2);
+                Hud_Ster2.hudSter2 =1;
+                return;
+            }}
+        for (Actor Ster3 : getIntersectingObjects(Ster3.class)) {
+            if (Ster3 != null) {
+                Greenfoot.playSound("colect.mp3");
+                getWorld().removeObject(Ster3);
+                Hud_Ster3.hudSter3 =1;
+                return;
+            }}
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
                 Greenfoot.setWorld(new GameOver());
                 getWorld().removeObject(this);
                 return;
 
             }}
         for (Actor Door : getIntersectingObjects(Door.class)) {
-            if (Door != null && star==2) {  
+ if (Door != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3==1 && DiamantHud.diamantHud==1) {  
                 Greenfoot.playSound("deurOpen.mp3");
-                Greenfoot.setWorld(new Level2()); 
+                Greenfoot.setWorld(new LevelChoose()); 
+                            Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+           
                 return;
 
-            }}
-        for (Actor DoorLevel2 : getIntersectingObjects(DoorLevel2.class)) {
-            if (DoorLevel2 != null && star==2) {  
+            }
+         if (Door != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3 ==1 && DiamantHud.diamantHud==0) {  
                 Greenfoot.playSound("deurOpen.mp3");
+
+                Greenfoot.setWorld(new Level2()); 
+                                                            Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
+                return;
+            }
+        }
+        for (Actor DoorLevel2 : getIntersectingObjects(DoorLevel2.class)) {
+  if (DoorLevel2 != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3==1&&DiamantHud.diamantHud==1) {  
+                Greenfoot.playSound("deurOpen.mp3");
+                Greenfoot.setWorld(new LevelChoose()); 
+                            Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+           
+                return;
+
+            }
+         if (DoorLevel2 != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3 ==1&&DiamantHud.diamantHud==0) {  
+                Greenfoot.playSound("deurOpen.mp3");
+
                 Greenfoot.setWorld(new Level3()); 
+                  Hud_Key.hudKey=0;
+                Hud_Ster2.hudSter2 =0;
+                Hud_Ster.hudSter =0;
+                DiamantHud.diamantHud=0;
+                Hud_Ster3.hudSter3 =0;
                 return;
             }}
     }
@@ -160,14 +208,20 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
             if (RozeKarakter != null) {
                 getWorld().removeObject(RozeKarakter);  
                 Greenfoot.playSound("muntKarakter.mp3");
-                setImage("p3_stand.png");
+                setImage("p3_walk02.png");
                 karakter =2;
                 duck = 3;
-                spring = -14;
+                spring = -11;
                 gravity = 4.8;
                 return;
             }
         }
+        //===============Size Change===================
+        //GreenfootImage myImage = getImage();
+        //int newSizeHeight = (int)myImage.getHeight()-30;
+        //int newSizeWidth = (int)myImage.getWidth()-30;
+        //myImage.scale(newSizeWidth, newSizeHeight);
+        
     }
 
     public void blauweKarakter(){  
@@ -178,9 +232,10 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
                 setImage("p2_walk11.png");
                 karakter =4;
                 duck =5;
-                spring =-20;
+                spring =-17;
                 gravity =5.5;
                 this.drag =0.9;
+                snelheidBlauwKarakter=2;
                 return;
             }
         }
@@ -194,7 +249,7 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
         if (Greenfoot.isKeyDown("w")&&onGround() == true && karakter==0) {
             setImage("p1_jump.png");
             Greenfoot.playSound("jump.mp3");
-            velocityY = -10;
+            
             velocityY = spring;
             karakter= 1;   
         }
@@ -209,13 +264,13 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
             setImage("p1.png");
             duck-=1;
         }
-        //==========2=============
+        //==========2 Roze=============
 
-        if (Greenfoot.isKeyDown("w")&&onGround() == true && karakter==2) {
+        if (Greenfoot.isKeyDown("w")&&onGround()==true && karakter==2) {
             setImage("p3_jump.png");
             Greenfoot.playSound("jump.mp3");
-            velocityY = -10;
-            velocityY = spring;
+         
+            velocityY = -11;
             karakter=3;   
         }
 
@@ -236,8 +291,8 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
         if (Greenfoot.isKeyDown("w")&&onGround() == true && karakter==4) {
             setImage("p2_jump.png");
             Greenfoot.playSound("jump.mp3");
-            velocityY = -10;
-            velocityY = spring;
+          
+            velocityY = -11;
             karakter=5;   
         }
 
@@ -253,19 +308,27 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
             setImage("p2_jump.png");
             duck-=1;
         }
-        //============================    
-        if (Greenfoot.isKeyDown("a")) {
+        //============================ 
+        if (Greenfoot.isKeyDown("a")&&snelheidBlauwKarakter==2) {
+            velocityX = -6;
+
+        }
+        if (Greenfoot.isKeyDown("d")&& snelheidBlauwKarakter==2) {
+            velocityX = 6;
+        }
+        if (Greenfoot.isKeyDown("a")&& snelheidBlauwKarakter==0) {
             velocityX = -3;
-        }  if (Greenfoot.isKeyDown("d")) {
+        }  if (Greenfoot.isKeyDown("d")&& snelheidBlauwKarakter==0) {
             velocityX = 3;
-        }}
+        }
+    }
 
     public void control(){
 
-        if (Greenfoot.isKeyDown("up")&&onGround() == true && karakter==0) {
+        if (Greenfoot.isKeyDown("up")&&onGround()==true && karakter==0) {
             setImage("p1_jump.png");
             Greenfoot.playSound("jump.mp3");
-            velocityY = -10;
+         
             velocityY = spring;
             karakter= 1;   
         }
@@ -280,12 +343,12 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
             setImage("p1.png");
             duck-=1;
         }
-        //==========2=============
+        //==========2 roze=============
 
-        if (Greenfoot.isKeyDown("up")&&onGround() == true && karakter==2) {
+        if (Greenfoot.isKeyDown("up")&&onGround()==true & karakter==2) {
             setImage("p3_jump.png");
             Greenfoot.playSound("jump.mp3");
-            velocityY = -10;
+        
             velocityY = spring;
             karakter=3;   
         }
@@ -304,10 +367,10 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
         }
         //==============3=============
 
-        if (Greenfoot.isKeyDown("up")&&onGround() == true && karakter==4) {
+        if (Greenfoot.isKeyDown("up")&&onGround() ==true && karakter==4) {
             setImage("p2_jump.png");
             Greenfoot.playSound("jump.mp3");
-            velocityY = -10;
+            
             velocityY = spring;
             karakter=5;   
         }
@@ -328,13 +391,22 @@ for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
         if (Greenfoot.isKeyDown("left")) {
             velocityX =-3;
         }  if (Greenfoot.isKeyDown("right")) {
-            velocityX =3;
+            velocityX =3; }
+
+        //============================   
+        if (Greenfoot.isKeyDown("left")&& snelheidBlauwKarakter==2) {
+            velocityX = -6;
 
         }
+        if (Greenfoot.isKeyDown("right")&& snelheidBlauwKarakter==2) {
+            velocityX = 6;
+        }
+        if (Greenfoot.isKeyDown("left")&& snelheidBlauwKarakter==0) {
+            velocityX = -3;
+        }  if (Greenfoot.isKeyDown("right")&& snelheidBlauwKarakter==0) {
+            velocityX = 3;
+        }
     }
-
-
-   
 
     public int getWidth() {
         return getImage().getWidth();

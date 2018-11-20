@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Diamant extends Mover
 {
- 
-
-
-   
 
     public Diamant() {
       

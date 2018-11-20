@@ -114,7 +114,7 @@ public class Level2 extends World {
      */
     private void prepare()
     {
-        Hud_Ster hud_Ster = new Hud_Ster();
+   Hud_Ster hud_Ster = new Hud_Ster();
         addObject(hud_Ster,146,56);
         Hud_Ster2 hud_Ster2 = new Hud_Ster2();
         addObject(hud_Ster2,188,55);
@@ -122,5 +122,9 @@ public class Level2 extends World {
         hud_Ster2.setLocation(191,58);
         Hud_Key hud_Key = new Hud_Key();
         addObject(hud_Key,247,51);
+        DiamantHud diamantHud = new DiamantHud();
+        addObject(diamantHud,166,92);
+        Hud_Ster3 hud_Ster3 = new Hud_Ster3();
+        addObject(hud_Ster3,298,53);
     }
 }
