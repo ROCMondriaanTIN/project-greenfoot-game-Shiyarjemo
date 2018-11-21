@@ -1,17 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class diamant here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Diamant extends Mover
 {
-
+public static int diamant;
     public Diamant() {
       
         setImage("gemBlue.png");
+        
+       
         
     }
 
@@ -19,6 +16,6 @@ public class Diamant extends Mover
     public void act() {
 
         applyVelocity();
-       
+        if(Diamant.diamant==1||diamant==1){this.setLocation(2186,370);}
     }
 }

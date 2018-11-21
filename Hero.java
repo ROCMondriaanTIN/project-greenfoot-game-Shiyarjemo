@@ -11,7 +11,7 @@ public class Hero extends Mover {
     int loop = 0;
     int duck = 0;
     int snelheidBlauwKarakter=0;
-
+public int keyYellow =0;
     public Hero() {
         super();
         gravity = 5.8;
@@ -35,14 +35,13 @@ public class Hero extends Mover {
         //=============1===========
         for (Actor Poker : getIntersectingObjects(Poker.class)) {
             if (Poker != null) {
-           Hud_Key.hudKey=0;
+                Hud_Key.hudKey=0;
                 Hud_Ster2.hudSter2 =0;
                 Hud_Ster.hudSter =0;
-                DiamantHud.diamantHud=0;
                 Hud_Ster3.hudSter3 =0;
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new GameOver());
-
+                DiamantHud.diamantHud=0;
                 return;
 
             }}
@@ -50,7 +49,7 @@ public class Hero extends Mover {
 
         for (Actor Slime : getIntersectingObjects(Slime.class)) {
             if (Slime != null) {
-           Hud_Key.hudKey=0;
+                Hud_Key.hudKey=0;
                 Hud_Ster2.hudSter2 =0;
                 Hud_Ster.hudSter =0;
                 DiamantHud.diamantHud=0;
@@ -65,7 +64,7 @@ public class Hero extends Mover {
         for (Actor Fire : getIntersectingObjects(Fire.class)) {
             if (Fire != null) {
                 getWorld().removeObject(this);
-            Hud_Key.hudKey=0;
+                Hud_Key.hudKey=0;
                 Hud_Ster2.hudSter2 =0;
                 Hud_Ster.hudSter =0;
                 DiamantHud.diamantHud=0;
@@ -78,7 +77,7 @@ public class Hero extends Mover {
         for (Actor FlyVijand : getIntersectingObjects(FlyVijand.class)) {
             if (FlyVijand != null) {
                 getWorld().removeObject(this);
-              Hud_Key.hudKey=0;
+                Hud_Key.hudKey=0;
                 Hud_Ster2.hudSter2 =0;
                 Hud_Ster.hudSter =0;
                 DiamantHud.diamantHud=0;
@@ -100,15 +99,20 @@ public class Hero extends Mover {
                 return;
 
             }}
-
+        for (Actor Box : getIntersectingObjects(Box.class)) {
+            if (Box != null) {
+                getWorld().removeObject(Box);
+               Diamant.diamant=1;
+                Greenfoot.playSound("colect.mp3");
+                return;
+            }}
         for (Actor Key : getIntersectingObjects(Key.class)) {
             if (Key != null) {
                 getWorld().removeObject(Key);
-
+                keyYellow=1;
                 Hud_Key.hudKey++;
                 Greenfoot.playSound("colect.mp3");
                 return;
-
             }}
         for (Actor LockYellow  : getIntersectingObjects(LockYellow.class)) {
             if (LockYellow != null&&keyYellow==1) {
@@ -117,7 +121,8 @@ public class Hero extends Mover {
 
         for (Actor Diamant : getIntersectingObjects(Diamant.class)) {
             if (Diamant != null) {
-                DiamantHud.diamantHud =1;
+                DiamantHud.diamantHud=1;
+
                 getWorld().removeObject(Diamant);
                 return;
             }}
@@ -127,6 +132,7 @@ public class Hero extends Mover {
                 Greenfoot.playSound("colect.mp3");
                 getWorld().removeObject(Star);
                 Hud_Ster.hudSter=1;
+
                 return;
             }}
 
@@ -135,6 +141,7 @@ public class Hero extends Mover {
                 Greenfoot.playSound("colect.mp3");
                 getWorld().removeObject(Star2);
                 Hud_Ster2.hudSter2 =1;
+
                 return;
             }}
         for (Actor Ster3 : getIntersectingObjects(Ster3.class)) {
@@ -142,6 +149,7 @@ public class Hero extends Mover {
                 Greenfoot.playSound("colect.mp3");
                 getWorld().removeObject(Ster3);
                 Hud_Ster3.hudSter3 =1;
+
                 return;
             }}
         for (Actor Water : getIntersectingObjects(Water.class)) {
@@ -152,55 +160,47 @@ public class Hero extends Mover {
                 Greenfoot.setWorld(new GameOver());
                 getWorld().removeObject(this);
                 return;
-
             }}
         for (Actor Door : getIntersectingObjects(Door.class)) {
- if (Door != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3==1 && DiamantHud.diamantHud==1) {  
-                Greenfoot.playSound("deurOpen.mp3");
-                Greenfoot.setWorld(new LevelChoose()); 
-                            Hud_Key.hudKey=0;
-                Hud_Ster2.hudSter2 =0;
-                Hud_Ster.hudSter =0;
-                DiamantHud.diamantHud=0;
-           
-                return;
-
-            }
-         if (Door != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3 ==1 && DiamantHud.diamantHud==0) {  
-                Greenfoot.playSound("deurOpen.mp3");
-
-                Greenfoot.setWorld(new Level2()); 
-                                                            Hud_Key.hudKey=0;
-                Hud_Ster2.hudSter2 =0;
-                Hud_Ster.hudSter =0;
-                DiamantHud.diamantHud=0;
-                Hud_Ster3.hudSter3 =0;
-                return;
-            }
-        }
+            DiamantHud.diamantHud=DiamantHud.diamantHud;
+            if (Door != null)if(DiamantHud.diamantHud==0){
+                    if(Hud_Ster.hudSter==1&&Hud_Ster2.hudSter2==1||Hud_Ster3.hudSter3==1){
+                        Greenfoot.playSound("deurOpen.mp3");
+                        Greenfoot.setWorld(new Level2()); 
+                        Hud_Key.hudKey=0;
+                        Hud_Ster2.hudSter2 =0;
+                        Hud_Ster.hudSter =0;
+                        DiamantHud.diamantHud=0;   return;  }} }
+        for (Actor Door : getIntersectingObjects(Door.class)) {
+            if (Door != null)if(DiamantHud.diamantHud==1){
+                    if(Hud_Ster.hudSter==1&&Hud_Ster2.hudSter2==1||Hud_Ster3.hudSter3==1){
+                        Greenfoot.playSound("deurOpen.mp3");
+                        Greenfoot.setWorld(new LevelChoose()); 
+                        Hud_Key.hudKey=0;
+                        Hud_Ster2.hudSter2 =0;
+                        Hud_Ster.hudSter =0;
+                        DiamantHud.diamantHud=0;   return;  }} }
         for (Actor DoorLevel2 : getIntersectingObjects(DoorLevel2.class)) {
-  if (DoorLevel2 != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3==1&&DiamantHud.diamantHud==1) {  
-                Greenfoot.playSound("deurOpen.mp3");
-                Greenfoot.setWorld(new LevelChoose()); 
-                            Hud_Key.hudKey=0;
-                Hud_Ster2.hudSter2 =0;
-                Hud_Ster.hudSter =0;
-                DiamantHud.diamantHud=0;
-           
-                return;
+            DiamantHud.diamantHud=DiamantHud.diamantHud;
+            if (DoorLevel2 != null)if(DiamantHud.diamantHud==0){
+                    if(Hud_Ster.hudSter==1&&Hud_Ster2.hudSter2==1||Hud_Ster3.hudSter3==1){
+                        Greenfoot.playSound("deurOpen.mp3");
+                        Greenfoot.setWorld(new Level3()); 
+                        Hud_Key.hudKey=0;
+                        Hud_Ster2.hudSter2=0;
+                        Hud_Ster.hudSter=0;
+                        DiamantHud.diamantHud=0;
+                        return;}} }
+        for (Actor DoorLevel2 : getIntersectingObjects(DoorLevel2.class)) {
+            if (DoorLevel2 != null)if(DiamantHud.diamantHud==1){
+                    if(Hud_Ster.hudSter==1&&Hud_Ster2.hudSter2==1||Hud_Ster3.hudSter3==1){
+                        Greenfoot.playSound("deurOpen.mp3");
+                        Greenfoot.setWorld(new LevelChoose()); 
+                        Hud_Key.hudKey=0;
+                        Hud_Ster2.hudSter2=0;
+                        Hud_Ster.hudSter=0;
+                        DiamantHud.diamantHud=0;   return;  }} }
 
-            }
-         if (DoorLevel2 != null && Hud_Ster.hudSter==1 || Hud_Ster2.hudSter2==1|| Hud_Ster3.hudSter3 ==1&&DiamantHud.diamantHud==0) {  
-                Greenfoot.playSound("deurOpen.mp3");
-
-                Greenfoot.setWorld(new Level3()); 
-                  Hud_Key.hudKey=0;
-                Hud_Ster2.hudSter2 =0;
-                Hud_Ster.hudSter =0;
-                DiamantHud.diamantHud=0;
-                Hud_Ster3.hudSter3 =0;
-                return;
-            }}
     }
 
     public void rozeKarakter(){  
@@ -221,7 +221,7 @@ public class Hero extends Mover {
         //int newSizeHeight = (int)myImage.getHeight()-30;
         //int newSizeWidth = (int)myImage.getWidth()-30;
         //myImage.scale(newSizeWidth, newSizeHeight);
-        
+
     }
 
     public void blauweKarakter(){  
@@ -232,7 +232,7 @@ public class Hero extends Mover {
                 setImage("p2_walk11.png");
                 karakter =4;
                 duck =5;
-                spring =-17;
+                spring =-19;
                 gravity =5.5;
                 this.drag =0.9;
                 snelheidBlauwKarakter=2;
@@ -249,7 +249,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("w")&&onGround() == true && karakter==0) {
             setImage("p1_jump.png");
             Greenfoot.playSound("jump.mp3");
-            
+
             velocityY = spring;
             karakter= 1;   
         }
@@ -269,7 +269,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("w")&&onGround()==true && karakter==2) {
             setImage("p3_jump.png");
             Greenfoot.playSound("jump.mp3");
-         
+
             velocityY = -11;
             karakter=3;   
         }
@@ -291,8 +291,8 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("w")&&onGround() == true && karakter==4) {
             setImage("p2_jump.png");
             Greenfoot.playSound("jump.mp3");
-          
-            velocityY = -11;
+
+            velocityY = spring;
             karakter=5;   
         }
 
@@ -328,7 +328,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("up")&&onGround()==true && karakter==0) {
             setImage("p1_jump.png");
             Greenfoot.playSound("jump.mp3");
-         
+
             velocityY = spring;
             karakter= 1;   
         }
@@ -348,7 +348,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("up")&&onGround()==true & karakter==2) {
             setImage("p3_jump.png");
             Greenfoot.playSound("jump.mp3");
-        
+
             velocityY = spring;
             karakter=3;   
         }
@@ -370,7 +370,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("up")&&onGround() ==true && karakter==4) {
             setImage("p2_jump.png");
             Greenfoot.playSound("jump.mp3");
-            
+
             velocityY = spring;
             karakter=5;   
         }

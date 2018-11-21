@@ -81,16 +81,16 @@ public class Level1 extends World {
         Slime slime4 = new Slime();
         addObject(slime4,2726,293);
         //==========================//
-        Star star = new Star();
-        addObject(star,4390,553);
+        Ster3 star3 = new Ster3();
+        addObject(star3,4390,553);
         Star2 star1 = new Star2();
         addObject(star1,662,461);
-        Ster3 star3 = new Ster3();
-        addObject(star3,3302,461);
-        
+        Star star = new Star();
+        addObject(star,3302,461);
+        Box box = new Box ();
+        addObject(box,2156,493);
         Diamant Diamant = new Diamant();
-        addObject(Diamant,2150,493);
-
+        addObject(Diamant,2150,700);
         //=========================//
         Poker poker = new Poker();
         addObject(poker,5071,553);
