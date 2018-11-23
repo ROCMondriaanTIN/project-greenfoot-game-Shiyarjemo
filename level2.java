@@ -32,7 +32,8 @@ public class Level2 extends World {
                 {6,6,6,6,6,6,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10},
                 {6,6,6,6,6,6,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10},
 
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                {6,6,6,6,6,6,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10},
+
             };
 
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
@@ -74,12 +75,10 @@ public class Level2 extends World {
 
         Diamant Diamant = new Diamant();
         addObject(Diamant,3425,530);
-
         Star star = new Star();
         addObject(star,2194,432);
-
-        Star2 star1 = new Star2();
-        addObject(star1,4215,493);
+        Star star2 = new Star();
+        addObject(star2,4215,493);
 
         BlauweKarakter karakter = new BlauweKarakter();
         addObject(karakter,1760,433);
@@ -90,8 +89,8 @@ public class Level2 extends World {
         Snail snail = new Snail();
         addObject(snail,4471,530);
 
-        DoorLevel2 deur = new DoorLevel2();
-        addObject(deur,5661,384);
+        Deur deur2 = new Deur("door_openMid.png");
+        addObject(deur2,5661,384);
         DeurBoven deurBoven = new DeurBoven();
         addObject(deurBoven,5661,314);
 
@@ -114,17 +113,18 @@ public class Level2 extends World {
      */
     private void prepare()
     {
-   Hud_Ster hud_Ster = new Hud_Ster();
-        addObject(hud_Ster,146,56);
-        Hud_Ster2 hud_Ster2 = new Hud_Ster2();
-        addObject(hud_Ster2,188,55);
-        hud_Ster2.setLocation(186,58);
-        hud_Ster2.setLocation(191,58);
-        Hud_Key hud_Key = new Hud_Key();
-        addObject(hud_Key,247,51);
-        DiamantHud diamantHud = new DiamantHud();
+
+   DiamantHud diamantHud = new DiamantHud();
         addObject(diamantHud,166,92);
-        Hud_Ster3 hud_Ster3 = new Hud_Ster3();
-        addObject(hud_Ster3,298,53);
+
+        AantalSters aantalSters = new AantalSters();
+        addObject(aantalSters,185,58);
+        Hud_Ster hud_Ster = new Hud_Ster();
+        addObject(hud_Ster,146,55);
+        HartHud hartHud = new HartHud();
+        addObject(hartHud,59,134);
+        Hud_Key hud_Key = new Hud_Key();
+        addObject(hud_Key,58,189);
+       
     }
 }

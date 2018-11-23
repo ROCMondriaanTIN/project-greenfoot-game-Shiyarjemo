@@ -38,7 +38,6 @@ public class Level4 extends World
      */
     private void prepare()
     {
-        LevelChoose4 levelChoose4 = new LevelChoose4();
-        addObject(levelChoose4,393,300);
+       
     }
 }

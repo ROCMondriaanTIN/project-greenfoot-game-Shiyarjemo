@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LevelChoose extends World
 {
 
+    
+    
     /**
      * Constructor for objects of class LevelChoose.
      * 
@@ -31,14 +33,16 @@ public class LevelChoose extends World
         SelectLevel selectLevel = new SelectLevel();
         addObject(selectLevel,451,171);
 
-        LevelChoose1 levelChoose1 = new LevelChoose1();
+        LevelChooseIcon levelChoose1 = new LevelChooseIcon("level1.png", new Level1());
         addObject(levelChoose1,183,416);
-        LevelChoose2 levelChoose2 = new LevelChoose2();
-        addObject(levelChoose2,372,412);
-        LevelChoose3 levelChoose3 = new LevelChoose3();
-        addObject(levelChoose3,555,414);
-        LevelChoose4 levelChoose4 = new LevelChoose4();
-        addObject(levelChoose4,726,416);
-
+        LevelChooseIcon levelChoose2 = new LevelChooseIcon("level2.png", new Level2());
+        if(Hud_Ster.aantalSter>1){addObject(levelChoose2,372,412);}
+        LevelChooseIcon levelChoose3 = new LevelChooseIcon("level3.png", new Level3());
+        if(Hud_Ster.aantalSter>3){
+            addObject(levelChoose3,555,414);}
+        LevelChooseIcon levelChoose4 = new LevelChooseIcon("level4.png", new Level4());
+        if(Hud_Ster.aantalSter>5){ addObject(levelChoose4,726,416);}
+        LevelChooseIcon levelChoose5 = new LevelChooseIcon("DiamantLevel.png", new BonusLevel());
+  if(DiamantHud.diamantHud==1){addObject(levelChoose5,466,562);;
     }
-}
+}}

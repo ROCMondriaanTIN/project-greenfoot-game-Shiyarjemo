@@ -8,16 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Hud_Ster extends Mover
 {
-public static int hudSter=0;
+     
   
-public void act() 
-    { reset();
+public static int aantalSter;
 
-   if(hudSter>0){
-    setImage("star.png");
-    } }
-public void reset(){
-    this.hudSter = hudSter;
-}
+ public  Hud_Ster(){
+ 
+      
+   } 
+public void act() 
+    { 
+ 
+ }
+
 
 }

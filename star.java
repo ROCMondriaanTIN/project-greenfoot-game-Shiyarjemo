@@ -7,41 +7,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Star extends Mover
-{
-    private int walkRange;
-    private int xMin;
-    private int xMax;
-    private boolean firstAct;
-    private int speed;
-
+{ public static String image;
+    public static int totaalStar;
     public Star() {
-      
-        setImage("star.png");
-        getImage().mirrorHorizontally();
-        walkRange = 140;
-        firstAct = true;
-        speed = 1;
+ 
     }
 
     @Override
     public void act() {
-        int x = getX();
-        int y = getY();
-
-        if (firstAct) {
-            firstAct = false;
-        }
-
-        velocityX = speed;
+      
         applyVelocity();
-        if (getX() >= xMax) {
-            speed *= -1;
-            x = xMax;
-            getImage().mirrorHorizontally();
-        } else if (getX() <= xMin) {
-            speed *= -1;
-            x = xMin;
-            getImage().mirrorHorizontally();
-        }
+        
     }
 }

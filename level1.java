@@ -15,7 +15,7 @@ public class Level1 extends World {
      */
     public Level1() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1, false);
+        super(900, 700, 1, false);
         this.setBackground("pg1.jpg");
 
         int[][] map = {
@@ -81,12 +81,15 @@ public class Level1 extends World {
         Slime slime4 = new Slime();
         addObject(slime4,2726,293);
         //==========================//
-        Ster3 star3 = new Ster3();
-        addObject(star3,4390,553);
-        Star2 star1 = new Star2();
-        addObject(star1,662,461);
         Star star = new Star();
-        addObject(star,3302,461);
+        addObject(star,4390,553);
+        Star star2 = new Star();
+        addObject(star2,662,461);
+        Star star3 = new Star();
+        addObject(star3,3302,461);
+
+       
+
         Box box = new Box ();
         addObject(box,2156,493);
         Diamant Diamant = new Diamant();
@@ -94,14 +97,16 @@ public class Level1 extends World {
         //=========================//
         Poker poker = new Poker();
         addObject(poker,5071,553);
-        DeurBoven door = new DeurBoven();
-        addObject(door,5677,215);
+
         //=========================//
         Key key = new Key();
         addObject(key,2736,613);
         //=========================//
-        Door doorEind = new Door();
-        addObject(doorEind,5677,273);
+        Deur deur1 = new Deur("door_openMid.png");
+        addObject(deur1,5677,273);
+        DeurBoven door = new DeurBoven();
+        addObject(door,5677,215);
+
         //=========================//
         Music music = new Music();
         addObject(music,61,54);
@@ -120,17 +125,18 @@ public class Level1 extends World {
         LockYellow lockYellow = new LockYellow();
         addObject(lockYellow,3613,553);
 
-        Hud_Ster hud_Ster = new Hud_Ster();
-        addObject(hud_Ster,146,56);
-        Hud_Ster2 hud_Ster2 = new Hud_Ster2();
-        addObject(hud_Ster2,188,55);
-        hud_Ster2.setLocation(186,58);
-        hud_Ster2.setLocation(191,58);
-        Hud_Key hud_Key = new Hud_Key();
-        addObject(hud_Key,247,51);
-        DiamantHud diamantHud = new DiamantHud();
+         DiamantHud diamantHud = new DiamantHud();
         addObject(diamantHud,166,92);
-        Hud_Ster3 hud_Ster3 = new Hud_Ster3();
-        addObject(hud_Ster3,298,53);
+
+        AantalSters aantalSters = new AantalSters();
+        addObject(aantalSters,185,58);
+        Hud_Ster hud_Ster = new Hud_Ster();
+        addObject(hud_Ster,146,55);
+        HartHud hartHud = new HartHud();
+        addObject(hartHud,59,134);
+        Hud_Key hud_Key = new Hud_Key();
+        addObject(hud_Key,58,189);
+ 
+
     }
 }
