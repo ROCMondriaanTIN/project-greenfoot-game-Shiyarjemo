@@ -8,12 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HartHud extends Mover
 {
-   public static int hart=2;
+
    
     public void act() 
     {
-        if(hart==1){setImage("hud_heartHalf.png");}
-        if(hart==0){setImage("hud_heartEmpty.png");}
         // Add your action code here.
     }    
 }

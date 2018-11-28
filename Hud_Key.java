@@ -12,6 +12,7 @@ public class Hud_Key extends Mover
      * Act - do whatever the Hud_Key wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public static int hudKey=0;
 
     public static void hudKey(){
@@ -27,8 +28,7 @@ public class Hud_Key extends Mover
 public void reset(){
     this.hudKey = hudKey;
 
-}
-        }
+}  }
   
      
         
