@@ -27,10 +27,14 @@ public class Tile extends Actor {
         }
         _id = id;
         id++;
+          Mover mover = new Mover();
+        
+          mover.applyVelocity();
     }
 
     @Override
     public String toString() {
+        
         return "id: " + _id + "\n"
                 + "X: " + getX() + "\n"
                 + "Y: " + getY();

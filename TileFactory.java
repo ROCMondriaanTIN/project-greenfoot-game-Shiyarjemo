@@ -73,6 +73,7 @@ public class TileFactory {
                            case 17:
                 tile = new Tile("slimeWalk1.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
+                
             default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;

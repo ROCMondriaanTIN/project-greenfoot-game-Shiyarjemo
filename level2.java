@@ -15,7 +15,7 @@ public class Level2 extends World {
      */
     public Level2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 800, 1, false);
+        super(1200, 800, 1, false);
         this.setBackground("startScreen.jpg");
 
         int[][] map = {{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -64,9 +64,7 @@ public class Level2 extends World {
     }
 
     void toevoegen(){
-        Music music = new Music();
-        addObject(music,61,54);
-        music.getClass();
+
         //=========================//
         Slime slime2 = new Slime();
         addObject(slime2,1249,535);
@@ -114,7 +112,7 @@ public class Level2 extends World {
     private void prepare()
     {
 
-   DiamantHud diamantHud = new DiamantHud();
+        DiamantHud diamantHud = new DiamantHud();
         addObject(diamantHud,166,92);
 
         AantalSters aantalSters = new AantalSters();
@@ -125,6 +123,7 @@ public class Level2 extends World {
         addObject(hartHud,59,134);
         Hud_Key hud_Key = new Hud_Key();
         addObject(hud_Key,58,189);
+
        
     }
 }

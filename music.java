@@ -36,5 +36,14 @@ public class Music extends Mover
         
         
         }
+         if(isTouching(Snail.class)||isTouching(Poker.class)||
+            isTouching(Slime.class)||isTouching(Fire.class)
+            ||isTouching(FlyVijand.class)||isTouching(Water.class)){Hud_Key.hudKey=0;
+
+            sound.pause();
+
+                return;
+            }
+     
     }    
 }
