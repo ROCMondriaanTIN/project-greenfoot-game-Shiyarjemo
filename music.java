@@ -1,17 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class music here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+    
+    /**
+     * Write a description of class music here.
+     * 
+     * @author (your name) 
+     * @version (a version number or a date)
+     */
 public class Music extends Mover
 {
-    
+        
     GreenfootSound sound = new GreenfootSound("music.mp3");
-                  boolean firstTrun = true;
+    boolean firstTrun = true;
+    
+    public Music() {
+        super();
+        setImage("pause.png");
+    }
 
+                  
     public void act() 
     {
         // Add your action code here.
