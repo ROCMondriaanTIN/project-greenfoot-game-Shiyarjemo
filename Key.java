@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Key extends Mover
 {
-  
+  public Key(){setImage("keyYellow.png");}
     public void act() {
       
          applyVelocity();

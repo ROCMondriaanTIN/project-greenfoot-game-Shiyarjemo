@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Star extends Mover
 { public static String image;
     public static int totaalStar;
-    public Star() {
+    public Star() {setImage("star.png");
  
     }
 
